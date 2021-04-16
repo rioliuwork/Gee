@@ -1,8 +1,10 @@
 package geecache
 
+import pb "geecache/geecachepb"
+
 //PeerGetter is the interface that must be implemented by a peer.
 type PeerGetter interface {
-	Get(group string, key string) ([]byte, error)
+	Get(in *pb.Request, out *pb.Response) error
 }
 
 //PeerGetter is the interface that must be implemented to locate
